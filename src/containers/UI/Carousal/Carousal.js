@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 
 import Bux from "../../../hoc/Bux";
 
+import axios from 'axios';
+
 import Classes from './Carousal.css';
 
 class Carousal extends Component {
@@ -10,6 +12,21 @@ class Carousal extends Component {
         current_direction: null,
         current_active_postion : this.props.position || 0
     }
+
+    componentDidMount() {
+        this.makeApiCall()
+    }
+
+    makeApiCall = () => {
+        console.log("[Make API Call]");
+        axios.get( '/api/test' )
+        .then( response => {
+            console.log(response);
+        } )
+        .catch(error => {
+            console.log(error);
+        });
+    };
     
     goNext = (direction) => {
         let current_active_postion = this.state.current_active_postion;
