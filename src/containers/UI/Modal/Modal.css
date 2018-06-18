@@ -1,0 +1,71 @@
+.Backdrop {
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: rgba(0,0, 0, 0.3);
+    z-index: 9998;
+    overflow: hidden;
+}
+
+.Modal {
+    height: 60%;
+    width: 80%;
+    padding: 2%;
+    position: fixed;
+    top: 20%;
+    left: 10%;
+    background: white;
+    z-index: 9999;
+    border-radius: 2%;
+    overflow-x: hidden;
+    overflow-y: auto;
+    box-sizing: border-box;
+}
+
+.Modal.Show {
+    animation: slideIn 1s ease;
+}
+
+.Modal.Hide {
+    animation: fadeOut 1s ease;
+}
+
+.Modal.Show, .Backdrop.Show {
+    display: block;
+}
+
+.Modal.Hide, .Backdrop.Hide {
+    display: none;
+}
+
+@keyframes slideIn {
+    0%{
+        opacity: 0;
+        transform: translateY(-100%)
+    }
+
+    50%{
+        opacity: 0.5;
+    }
+
+    100%{
+        opacity: 1;
+        transform: translateY(0)
+    }
+}
+
+@keyframes fadeOut {
+    0%{
+        opacity: 1;
+    }
+
+    50%{
+        opacity: 0.5;
+    }
+
+    100%{
+        opacity: 0;
+    }
+}

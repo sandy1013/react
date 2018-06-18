@@ -10,4 +10,8 @@ router.get('/test', (req, res) => {
     res.status(200).send({success: true}); 
 });
 
+router.get('/*', (req, res) => {
+    res.status(404).send();
+});
+
 module.exports = router;

@@ -21,10 +21,10 @@ class Carousal extends Component {
         console.log("[Make API Call]");
         axios.get( '/api/test' )
         .then( response => {
-            console.log(response);
+            console.log("[Make API Call] [Success] : ", response);
         } )
         .catch(error => {
-            console.log(error);
+            console.log("[Make API Call] [Error] : ", error);
         });
     };
     
