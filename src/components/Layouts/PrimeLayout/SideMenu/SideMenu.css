@@ -1,0 +1,54 @@
+.SideMenu {
+    position: fixed;
+    top: 40px;
+    height: calc(100% - 40px);
+    width: 75%;
+    overflow-x: hidden;
+    overflow-y: auto;
+    box-sizing: border-box;
+    background: white;
+    left: -100%;
+}
+
+.SideMenu.show {
+    left:0;
+    animation: slideIn 1s ease-in;
+}
+
+.SideMenu.hide {
+    left: -100%;
+    animation: slideOut 2s ease-out;
+}
+
+
+@keyframes slideIn {
+    0% {
+        opacity: 0;
+        transform: translateX(-100%);
+    }
+
+    50% {
+        opacity: 0.6;
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideOut {
+    0% {
+        opacity: 1;
+        transform: translateX(100%);
+    }
+
+    50% {
+        opacity: 0.6;
+    }
+
+    100% {
+        opacity: 0;
+        transform: translateX(-100%);
+    }
+}

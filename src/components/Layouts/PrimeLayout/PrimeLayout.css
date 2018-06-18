@@ -1,0 +1,226 @@
+.AppHeader {
+    display: flex;
+    align-items: center;
+    height: 40px;
+    line-height: 40px;
+    color: white;
+    background-color: #3c3c3c;
+    box-sizing: border-box;
+}
+
+.AppHeader h1 {
+    flex: 1;
+    padding: 0em 0.5em;
+    height: 40px;
+    font-size: 2em;
+}
+
+.AppHeader > div {
+    flex: 1;
+}
+
+.AppContainer {
+    height: calc(100% - 40px);
+    overflow-y: auto;
+    overflow-x: hidden;
+    box-sizing: border-box;
+}
+
+.AppMenuBtn {
+    width: 35px;
+    height: 35px;
+    margin-right: 10px;
+    padding: 5px;
+    border: none;
+    background: transparent;
+    color: white;
+    outline: none
+}
+
+.AppMenuBtn > div {
+    width: 32px;
+    height: 5px;
+    background-color: #fcfcfc;
+    margin-bottom: 4px;
+    display: none;
+}
+
+.AppMenuBtn.hover > div, .AppMenuBtn.active > div {
+    background-color: #c7c7c7 !important;
+}
+
+
+.NavigationVertical {
+    width: 70%;
+    box-sizing: border-box;
+}
+
+.NavigationVertical ul {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.NavigationVertical li {
+    margin-right: 1em;
+}
+
+.NavigationVertical a {
+    text-decoration: none;
+    color: white;
+}
+
+.NavigationHorizontal {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.NavigationHorizontal ul {
+    list-style: none;
+    width: 100%;
+}
+
+.NavigationHorizontal li {
+    padding: 1em;
+}
+
+.NavigationHorizontal a {
+    text-decoration: none;
+    color: black;
+}
+
+@media only screen 
+  and (min-device-width: 320px) 
+  and (max-device-width: 480px)
+  and (-webkit-min-device-pixel-ratio: 2) {
+    .AppMenuBtn > div {
+        display: block;
+    }
+    .AppHeader > div {
+        display: none;
+    }
+    .NavigationVertical {
+        display: none;
+    }
+    .AppHeader h1 {
+        font-size: 1.6em;
+    }
+}
+
+@media only screen 
+  and (min-device-width: 320px) 
+  and (max-device-width: 568px)
+  and (-webkit-min-device-pixel-ratio: 2) {
+    .AppMenuBtn > div {
+        display: block;
+    }
+    .AppHeader > div {
+        display: none;
+    }
+    .NavigationVertical {
+        display: none;
+    }
+    .AppHeader h1 {
+        font-size: 1.6em;
+    }
+}
+@media only screen 
+  and (min-device-width: 375px) 
+  and (max-device-width: 667px) 
+  and (-webkit-min-device-pixel-ratio: 2) { 
+    .AppMenuBtn > div {
+        display: block;
+    }
+    .AppHeader > div {
+        display: none;
+    }
+    .NavigationVertical {
+        display: none;
+    }
+    .AppHeader h1 {
+        font-size: 1.6em;
+    }
+}
+
+@media only screen 
+  and (min-device-width: 414px) 
+  and (max-device-width: 736px) 
+  and (-webkit-min-device-pixel-ratio: 3) { 
+    .AppMenuBtn > div {
+        display: block;
+    }
+    .AppHeader > div {
+        display: none;
+    }
+    .NavigationVertical {
+        display: none;
+    }
+    .AppHeader h1 {
+        font-size: 1.6em;
+    }
+}
+
+@media only screen 
+  and (min-device-width: 375px) 
+  and (max-device-width: 812px) 
+  and (-webkit-min-device-pixel-ratio: 3) { 
+    .AppMenuBtn > div {
+        display: block;
+    }
+    .AppHeader > div {
+        display: none;
+    }
+    .NavigationVertical {
+        display: none;
+    }
+    .AppHeader h1 {
+        font-size: 1.6em;
+    }
+}
+
+/* Tabs */
+@media only screen 
+  and (min-device-width: 768px) 
+  and (max-device-width: 1024px) 
+  and (-webkit-min-device-pixel-ratio: 1) {
+    .AppMenuBtn > div {
+        display: block;
+    }
+    .AppHeader > div {
+        display: none;
+    }
+    .NavigationVertical {
+        display: none;
+    }
+}
+
+@media only screen 
+  and (min-device-width: 768px) 
+  and (max-device-width: 1024px) 
+  and (-webkit-min-device-pixel-ratio: 2) {
+    .AppMenuBtn > div {
+        display: block;
+    }
+    .AppHeader > div {
+        display: none;
+    }
+    .NavigationVertical {
+        display: none;
+    }
+}
+
+@media only screen 
+  and (min-device-width: 834px) 
+  and (max-device-width: 1112px)
+  and (-webkit-min-device-pixel-ratio: 2) {
+    .AppMenuBtn > div {
+        display: block;
+    }
+    .AppHeader > div {
+        display: none;
+    }
+    .NavigationVertical {
+        display: none;
+    }
+}

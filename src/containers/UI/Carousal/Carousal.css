@@ -1,0 +1,120 @@
+.CarousalPanel {
+    height: 100%;
+    width: 100%;
+    padding: 0.5em 1em;
+    position: absolute;
+    color: white;
+    left: -100%;
+    box-sizing: border-box;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+.CarousalPanel.static {
+    left: 0px;
+}
+
+.CarousalPanel.showLeft {
+    left: 0px;
+    animation: easeInLeft 1s ease;
+}
+
+.CarousalPanel.hideLeft {
+    animation: easeOutLeft 1s ease;
+}
+
+@keyframes easeInLeft {
+    0% {
+        opacity: 0;
+        transform: translateX(100%);
+    }
+
+    50% {
+        opacity: 0.6;
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes easeOutLeft {
+    0% {
+        opacity: 1;
+        transform: translateX(100%);
+    }
+
+    50% {
+        opacity: 0.6;
+    }
+
+    100% {
+        opacity: 0;
+        transform: translateX(0);
+    }
+}
+
+.CarousalPanel.showRight {
+    left: 0px;
+    animation: easeInRight 1s ease;
+}
+
+.CarousalPanel.hideRight {
+    animation: easeOutRight 1s ease;
+}
+
+@keyframes easeInRight {
+    0% {
+        opacity: 0;
+        transform: translateX(-100%);
+    }
+
+    50% {
+        opacity: 0.6;
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes easeOutRight {
+    0% {
+        opacity: 1;
+        transform: translateX(100%);
+    }
+
+    50% {
+        opacity: 0.6;
+    }
+
+    100% {
+        opacity: 0;
+        transform: translateX(200%);
+    }
+}
+
+.CarousalNavigation {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    width: 100%;
+    padding: 1em;
+    top: 90%;
+    color: white;
+}
+
+.CarousalNavigation > div {
+    width: 10px;
+    height: 10px;
+    border-radius: 10px;
+    border: 2px solid white;
+    margin-right: 10px;
+}
+
+.CarousalNavigation .active {
+    background-color: white;
+}
