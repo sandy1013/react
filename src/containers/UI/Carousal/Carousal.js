@@ -105,9 +105,9 @@ class CarousalPanel extends Component {
 
     handelSwipeComplete() {
         if(this.touchendX && (this.touchendX > this.touchstartX) && (this.touchendX - this.touchstartX) > this.touchOffset) {
-            this.props.next('right');
+            this.props.next('left');
         } else if(this.touchendX && (this.touchendX < this.touchstartX) && (this.touchstartX - this.touchendX)  -this.touchOffset) {
-            this.props.prev('left');
+            this.props.prev('right');
         }
 
         this.touchstartX = 0;
@@ -145,10 +145,10 @@ class CarousalNavigation extends Component {
     handelKeyDown =  (event) => {
         switch( event.keyCode ) {
             case this.config['RIGHT_KEY']:
-                this.props.next('right');
+                this.props.next('left');
                 break;
             case this.config['LEFT_KEY']:
-                this.props.prev('left');
+                this.props.prev('right');
                 break;
             default: 
                 break;

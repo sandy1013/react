@@ -8,6 +8,7 @@
     box-sizing: border-box;
     background: white;
     left: -100%;
+    z-index: 9999;
 }
 
 .SideMenu.show {
@@ -51,4 +52,20 @@
         opacity: 0;
         transform: translateX(-100%);
     }
+}
+
+.Backdrop {
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: rgba(0,0, 0, 0.3);
+    z-index: 9998;
+    overflow: hidden;
+    display: none;
+}
+
+.Backdrop.Show {
+    display: block;
 }

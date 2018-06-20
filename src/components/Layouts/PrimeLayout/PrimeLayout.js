@@ -31,7 +31,7 @@ class PrimeLayout extends Component {
                         Santosh Varma Kosuri J
                     </h1>
                     <div>
-                        <Navigation orientation="vertical" ></Navigation>
+                        <Navigation orientation="vertical" toggleModal={this.props.toggleModal} toggleMenu={this.handelOpen}></Navigation>
                     </div>
                     <button className={Classes.AppMenuBtn} onClick={this.handelOpen}><div></div><div></div><div></div></button>
                 </header>
@@ -39,8 +39,8 @@ class PrimeLayout extends Component {
                     {this.props.children}
                 </div>
     
-                <SideBar show={this.state.open}>
-                    <Navigation orientation="horizontal" ></Navigation>
+                <SideBar show={this.state.open} toggle={this.handelOpen}>
+                    <Navigation orientation="horizontal" toggleModal={this.props.toggleModal} toggleMenu={this.handelOpen}></Navigation>
                 </SideBar>
             </Bux>
         )
@@ -48,15 +48,29 @@ class PrimeLayout extends Component {
 };
 
 const Navigation = (props) => {
+
+    let handelClick = (type) => {
+        if( !type ) return;
+    
+        switch(type) {
+            case 'login':
+                if(props.orientation === "horizontal") props.toggleMenu();
+                props.toggleModal();
+                break;
+            default:
+            return;
+        }
+    };
+
     return(
         <Bux>
             <nav className={(props.orientation === "horizontal") ? Classes.NavigationHorizontal : Classes.NavigationVertical }>
-                <ul>
-                    <li>
+                <ul className={(props.orientation === "horizontal") ? "list-group" : null}>
+                    <li className={(props.orientation === "horizontal") ? "list-group-item" : null}>
                         <a href=""> Home </a>
                     </li>
-                    <li>
-                        <a href=""> Other </a>
+                    <li className={(props.orientation === "horizontal") ? "list-group-item" : null}>
+                        <a href="javascript:void(0);" onClick={() => handelClick('login')}> Login </a>
                     </li>
                 </ul>
             </nav>
