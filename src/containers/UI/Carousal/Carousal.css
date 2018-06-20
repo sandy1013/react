@@ -16,11 +16,11 @@
 
 .CarousalPanel.showLeft {
     left: 0px;
-    animation: easeInLeft 1s ease;
+    animation: easeInRight 1s ease;
 }
 
 .CarousalPanel.hideLeft {
-    animation: easeOutLeft 1s ease;
+    animation: easeOutRight 1s ease;
 }
 
 @keyframes easeInLeft {
@@ -57,11 +57,11 @@
 
 .CarousalPanel.showRight {
     left: 0px;
-    animation: easeInRight 1s ease;
+    animation: easeInLeft 1s ease;
 }
 
 .CarousalPanel.hideRight {
-    animation: easeOutRight 1s ease;
+    animation: easeOutLeft 1s ease;
 }
 
 @keyframes easeInRight {
