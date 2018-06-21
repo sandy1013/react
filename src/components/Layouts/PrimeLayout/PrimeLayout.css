@@ -1,8 +1,8 @@
 .AppHeader {
     display: flex;
     align-items: center;
-    height: 40px;
-    line-height: 40px;
+    height: 50px;
+    line-height: 50px;
     color: white;
     background-color: #191919;
     box-sizing: border-box;
@@ -20,7 +20,7 @@
 }
 
 .AppContainer {
-    height: calc(100% - 40px);
+    height: calc(100% - 50px);
     overflow-y: auto;
     overflow-x: hidden;
     box-sizing: border-box;

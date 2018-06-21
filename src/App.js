@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 
 import Layout from "./components/Layouts/PrimeLayout/PrimeLayout";
-import Carousal from "./containers/UI/Carousal/Carousal";
+import { Carousal, Panel} from "./containers/UI/Carousal/Carousal";
 import Modal from './containers/UI/Modal/Modal';
 
 import Login from "./components/Login/Login";
-import CarousalHeader from "./components/CarousalHeader/CarousalHeader"
+import Banner from "./components/Banner/Banner";
 
 import workImage from "./Assets/images/work/work-high.jpg";
 import hobbiesImage from "./Assets/images/hobbies/hobbies-high.jpeg";
@@ -40,25 +40,25 @@ class App extends Component {
         <Modal show={this.state.open} toggle={this.toggleModal}>
             <Login />
         </Modal>
-        <Carousal height="50%" width="100%" 
+        <Carousal height="60%" width="100%" 
                   current={(slide) => this.selectedPanel(slide)}
                   position="2"
                   ref={'carousal'}>
-          <div bg-color="rgba(195, 131, 39, 0.26)" font-color="#fff" bg-image={hobbiesImage}>
-              <CarousalHeader title="What i like."></CarousalHeader>
-          </div>
-          <div bg-color="rgba(195, 131, 39, 0.26)" font-color="#fff" bg-image={lifeImage}>
-              <CarousalHeader title="Who am i."></CarousalHeader>
-          </div>
-          <div bg-color="rgba(195, 131, 39, 0.26)" font-color="#fff" bg-image={workImage}>
-              <CarousalHeader title="What i do."></CarousalHeader>
-          </div>
-          <div bg-color="rgba(195, 131, 39, 0.26)" font-color="#fff" bg-image={portfolioImage}>
-              <CarousalHeader title="What i did."></CarousalHeader>
-          </div>
-          <div bg-color="rgba(195, 131, 39, 0.26)" font-color="#fff" bg-image={contactImage}>
-              <CarousalHeader title="Contact me."></CarousalHeader>
-          </div>
+          <Panel bg-color="rgba(195, 131, 39, 0.26)" font-color="#fff" bg-image={hobbiesImage}>
+              <Banner title="What i like."></Banner>
+          </Panel>
+          <Panel bg-color="rgba(195, 131, 39, 0.26)" font-color="#fff" bg-image={lifeImage}>
+              <Banner title="Who am i."></Banner>
+          </Panel>
+          <Panel bg-color="rgba(195, 131, 39, 0.26)" font-color="#fff" bg-image={workImage}>
+              <Banner title="What i do."></Banner>
+          </Panel>
+          <Panel bg-color="rgba(195, 131, 39, 0.26)" font-color="#fff" bg-image={portfolioImage}>
+              <Banner title="What i did."></Banner>
+          </Panel>
+          <Panel bg-color="rgba(195, 131, 39, 0.26)" font-color="#fff" bg-image={contactImage}>
+              <Banner title="Contact me."></Banner>
+          </Panel>
         </Carousal>
       </Layout>
     );

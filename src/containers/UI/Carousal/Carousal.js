@@ -59,6 +59,7 @@ class Carousal extends Component {
     };
 
     render() {
+        console.log(this.props.children);
         var panels = this.props.children ? 
                         this.props.children.map((ele, index) => {
                             return (
@@ -198,5 +199,16 @@ class CarousalNavigation extends Component {
     }
 }
 
-export default Carousal;
+const Panel = (props) => {
+    return (
+        <div style={{height : '100%'}}>
+            {props.children}
+        </div>
+    )
+};
+
+export {
+    Carousal,
+    Panel
+}
 
