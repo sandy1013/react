@@ -9,8 +9,8 @@
     }
   ],
   "start_url": "./index.html",
-  "display": "standalone",
-  "theme_color": "#000000",
-  ​​"orientation": "portrait-primary",
+  "display": "fullscreen",
+  "theme_color": "#e84855",
+  ​​"orientation": "portrait",
   "background_color": "#ffffff"
 }
