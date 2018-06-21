@@ -95,7 +95,7 @@ class Carousal extends Component {
 class CarousalPanel extends Component {
     touchstartX = 0;
     touchendX = 0;
-    touchOffset = 280;
+    touchOffset = 150;
 
     handelSwipeStart = (event) => {
         this.touchstartX = event.changedTouches[0].screenX;
