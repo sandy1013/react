@@ -67,6 +67,7 @@ class Carousal extends Component {
                                     showClass={(this.state.current_direction === null) ? 'static' : (index === this.state.current_active_postion && this.state.current_direction === 'left') ? 'showLeft' : 'showRight'}
                                     hideClass={(this.state.current_direction === null) ? '' : (index !== this.state.current_active_postion && this.state.current_direction === 'left') ? 'hideLeft' : 'hideRight'}
                                     bgColor={this.props.children[index].props["bg-color"] || '#000'}
+                                    bgImage={this.props.children[index].props["bg-image"] || null}
                                     fontColor={this.props.children[index].props["font-color"] || '#fff'}
                                     next={(direction) => this.goNext(direction)}
                                     prev={(direction) => this.goPrev(direction)}>
@@ -124,19 +125,25 @@ class CarousalPanel extends Component {
     render() {
         let all_classes = [Classes.CarousalPanel];
         (this.props.show) ? all_classes.push(Classes[this.props.showClass]) : all_classes.push(Classes[this.props.hideClass]);
+        if(this.props.bgImage) all_classes.push(Classes.Image);
         all_classes = all_classes.join(' ');
 
         return (
             <div className={all_classes} 
                 style = {{
-                    backgroundColor : (this.props.bgColor) ? this.props.bgColor : null,
                     color: (this.props.fontColor) ? this.props.fontColor : null,
+                    backgroundImage: (this.props.bgImage) ? `url(${this.props.bgImage})` : null
                 }}
                 onTouchStart={this.handelSwipeStart.bind(this)}
                 onTouchMove={this.handelSwipeMove.bind(this)}
                 onTouchEnd={this.handelSwipeEnd.bind(this)}>
-                <div>
-                    {this.props.children}
+                <div style={{
+                        backgroundColor : (this.props.bgColor) ? this.props.bgColor : null,
+                        height: '100%'
+                    }}> 
+                    <div >
+                        {this.props.children}
+                    </div>
                 </div>
             </div>
         );
