@@ -43,7 +43,6 @@
     height: 5px;
     background-color: #fcfcfc;
     margin-bottom: 4px;
-    display: none;
 }
 
 .AppMenuBtn.hover > div, .AppMenuBtn.active > div {
@@ -95,7 +94,7 @@
   and (min-device-width: 320px) 
   and (max-device-width: 480px)
   and (-webkit-min-device-pixel-ratio: 2) {
-    .AppMenuBtn > div {
+    .AppMenuBtn {
         display: block;
     }
     .AppHeader > div {
@@ -113,7 +112,7 @@
   and (min-device-width: 320px) 
   and (max-device-width: 568px)
   and (-webkit-min-device-pixel-ratio: 2) {
-    .AppMenuBtn > div {
+    .AppMenuBtn {
         display: block;
     }
     .AppHeader > div {
@@ -130,7 +129,7 @@
   and (min-device-width: 375px) 
   and (max-device-width: 667px) 
   and (-webkit-min-device-pixel-ratio: 2) { 
-    .AppMenuBtn > div {
+    .AppMenuBtn {
         display: block;
     }
     .AppHeader > div {
@@ -148,7 +147,7 @@
   and (min-device-width: 414px) 
   and (max-device-width: 736px) 
   and (-webkit-min-device-pixel-ratio: 3) { 
-    .AppMenuBtn > div {
+    .AppMenuBtn {
         display: block;
     }
     .AppHeader > div {
@@ -166,7 +165,7 @@
   and (min-device-width: 375px) 
   and (max-device-width: 812px) 
   and (-webkit-min-device-pixel-ratio: 3) { 
-    .AppMenuBtn > div {
+    .AppMenuBtn {
         display: block;
     }
     .AppHeader > div {
@@ -185,7 +184,7 @@
   and (min-device-width: 768px) 
   and (max-device-width: 1024px) 
   and (-webkit-min-device-pixel-ratio: 1) {
-    .AppMenuBtn > div {
+    .AppMenuBtn {
         display: block;
     }
     .AppHeader > div {
@@ -200,7 +199,7 @@
   and (min-device-width: 768px) 
   and (max-device-width: 1024px) 
   and (-webkit-min-device-pixel-ratio: 2) {
-    .AppMenuBtn > div {
+    .AppMenuBtn {
         display: block;
     }
     .AppHeader > div {
@@ -215,7 +214,7 @@
   and (min-device-width: 834px) 
   and (max-device-width: 1112px)
   and (-webkit-min-device-pixel-ratio: 2) {
-    .AppMenuBtn > div {
+    .AppMenuBtn {
         display: block;
     }
     .AppHeader > div {

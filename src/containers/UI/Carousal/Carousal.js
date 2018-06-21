@@ -1,21 +1,21 @@
 import React, { Component } from 'react';
 
-import Bux from "../../../hoc/Bux";
-
 import axios from 'axios';
 
 import Classes from './Carousal.css';
 
 class Carousal extends Component {
-
+    
+    position = parseInt(this.props.position);
+    
     state = {
         current_direction: null,
-        current_active_postion : this.props.position || 0
-    }
+        current_active_postion : (isNaN(this.position) || this.position > this.props.children.length) ? 0 : this.position
+    };
 
     componentDidMount() {
         this.makeApiCall()
-    }
+    };
 
     makeApiCall = () => {
         console.log("[Make API Call]");
@@ -54,6 +54,8 @@ class Carousal extends Component {
             current_direction: direction,
             current_active_postion : position
         });
+
+        if(this.props.current) this.props.current(position);
     };
 
     render() {
@@ -64,7 +66,8 @@ class Carousal extends Component {
                                     show={(index === this.state.current_active_postion) ? true : false}
                                     showClass={(this.state.current_direction === null) ? 'static' : (index === this.state.current_active_postion && this.state.current_direction === 'left') ? 'showLeft' : 'showRight'}
                                     hideClass={(this.state.current_direction === null) ? '' : (index !== this.state.current_active_postion && this.state.current_direction === 'left') ? 'hideLeft' : 'hideRight'}
-                                    bgColor={this.props.children[index].props["bg-color"] || '#ffc107'}
+                                    bgColor={this.props.children[index].props["bg-color"] || '#000'}
+                                    fontColor={this.props.children[index].props["font-color"] || '#fff'}
                                     next={(direction) => this.goNext(direction)}
                                     prev={(direction) => this.goPrev(direction)}>
                                     {this.props.children[index]}
@@ -74,14 +77,17 @@ class Carousal extends Component {
                         : null;
 
         return (
-            <Bux>
+            <div className={Classes.Carousal} style={{
+                height : (this.props.height) ? this.props.height : '280px',
+                width : (this.props.width) ? this.props.width : '100%'
+                }}>
                 {panels}
                 <CarousalNavigation active={this.state.current_active_postion} 
                                     total={(this.props.children.length) ? this.props.children.length : 0}
                                     next={(direction) => this.goNext(direction)}
                                     prev={(direction) => this.goPrev(direction)}
                                     gotoPane={this.setActivePosition}/>
-            </Bux>
+            </div>
         );
     }
 };
@@ -89,7 +95,7 @@ class Carousal extends Component {
 class CarousalPanel extends Component {
     touchstartX = 0;
     touchendX = 0;
-    touchOffset = 250;
+    touchOffset = 280;
 
     handelSwipeStart = (event) => {
         this.touchstartX = event.changedTouches[0].screenX;
@@ -122,13 +128,16 @@ class CarousalPanel extends Component {
 
         return (
             <div className={all_classes} 
-                style= {{
-                    backgroundColor : (this.props.bgColor) ? this.props.bgColor : null
+                style = {{
+                    backgroundColor : (this.props.bgColor) ? this.props.bgColor : null,
+                    color: (this.props.fontColor) ? this.props.fontColor : null,
                 }}
                 onTouchStart={this.handelSwipeStart.bind(this)}
                 onTouchMove={this.handelSwipeMove.bind(this)}
                 onTouchEnd={this.handelSwipeEnd.bind(this)}>
-                {this.props.children}
+                <div>
+                    {this.props.children}
+                </div>
             </div>
         );
         
