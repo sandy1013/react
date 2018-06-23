@@ -1,0 +1,125 @@
+.Profile {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1em 0em;
+    margin: 0em auto;
+    width: 80%;
+}
+
+.CompanyLogo {
+    width: 280px;
+    height: 200px;
+}
+
+.Profile > div > h3 {
+    font-size: 2em;
+    font-weight: bold;
+}
+
+.Profile > div > p {
+    font-size: 1.6em;
+    margin-bottom: 0.5em;
+}
+
+/* Portrait and Landscape Mobile*/
+@media only screen 
+  and (min-device-width: 320px) 
+  and (max-device-width: 812px)
+  and (-webkit-min-device-pixel-ratio: 2) {
+    .Profile {
+        display: flex;
+        flex-direction: column;
+        width: 90%;
+    }
+    
+    .Profile > div > h3 {
+        font-size: 1.8em;
+        font-weight: bold;
+    }
+    
+    .Profile > div > p {
+        font-size: 1.2em;
+        margin-bottom: 0.5em;
+    }
+
+    .Profile > div > * {
+        text-align: center;
+    }
+}
+
+@media only screen 
+  and (min-device-width: 320px) 
+  and (max-device-width: 812px)
+  and (-webkit-min-device-pixel-ratio: 3) {
+    .Profile {
+        display: flex;
+        flex-direction: column;
+        width: 90%;
+    }
+    
+    .Profile > div > h3 {
+        font-size: 1.8em;
+        font-weight: bold;
+    }
+    
+    .Profile > div > p {
+        font-size: 1.2em;
+        margin-bottom: 0.5em;
+    }
+
+    .Profile > div > * {
+        text-align: center;
+    }
+}
+
+@media only screen 
+  and (min-device-width: 320px) 
+  and (max-device-width: 812px)
+  and (-webkit-min-device-pixel-ratio: 4) {
+    .Profile {
+        display: flex;
+        flex-direction: column;
+        width: 90%;
+    }
+    
+    .Profile > div > h3 {
+        font-size: 1.8em;
+        font-weight: bold;
+    }
+    
+    .Profile > div > p {
+        font-size: 1.2em;
+        margin-bottom: 0.5em;
+    }
+
+    .Profile > div > * {
+        text-align: center;
+    }
+}
+
+/* Windows Phone */
+
+@media screen 
+  and (device-width: 480px) 
+  and (device-height: 800px) {
+    .Profile {
+        display: flex;
+        flex-direction: column;
+        width: 90%;
+    }
+    
+    .Profile > div > h3 {
+        font-size: 1.8em;
+        font-weight: bold;
+    }
+    
+    .Profile > div > p {
+        font-size: 1.2em;
+        margin-bottom: 0.5em;
+    }
+
+    .Profile > div > * {
+        text-align: center;
+    }
+}

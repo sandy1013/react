@@ -59,7 +59,6 @@ class Carousal extends Component {
     };
 
     render() {
-        console.log(this.props.children);
         var panels = this.props.children ? 
                         this.props.children.map((ele, index) => {
                             return (
