@@ -1,0 +1,18 @@
+{
+    "react-compoent": {
+        "prefix": "reactcomponet",
+        "scope": "javascript,typescript",
+        "body": [
+            "import React from 'react';",
+            "",
+            "const compoent = (props) => {",
+                "return (",
+                "   <div>compnent</div>",
+                ");",
+            "};",
+            "",
+            "export default compoent;"
+        ],
+        "description": "React Componet"
+    }
+}

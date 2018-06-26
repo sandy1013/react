@@ -1,4 +1,6 @@
 import React, {Component} from 'react';
+import {Link} from 'react-router-dom';
+
 
 import Bux from "../../../hoc/Bux";
 
@@ -28,7 +30,7 @@ class PrimeLayout extends Component {
             <Bux>
                 <header className={Classes.AppHeader}>
                     <h1>
-                        Santosh Varma Kosuri J
+                        <Link to="/"> Santosh Varma Kosuri J </Link>
                     </h1>
                     <div>
                         <Navigation orientation="vertical" toggleModal={this.props.toggleModal} toggleMenu={this.handelOpen}></Navigation>
@@ -66,9 +68,6 @@ const Navigation = (props) => {
         <Bux>
             <nav className={(props.orientation === "horizontal") ? Classes.NavigationHorizontal : Classes.NavigationVertical }>
                 <ul className={(props.orientation === "horizontal") ? "list-group" : null}>
-                    <li className={(props.orientation === "horizontal") ? "list-group-item" : null}>
-                        <a href=""> Home </a>
-                    </li>
                     <li className={(props.orientation === "horizontal") ? "list-group-item" : null}>
                         <a href="javascript:void(0);" onClick={() => handelClick('login')}> Login </a>
                     </li>
